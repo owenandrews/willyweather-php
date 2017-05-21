@@ -84,7 +84,7 @@ $willyWeather = new Client('<API-KEY>', '/tmp/');
 Contributions are most welcome, just submit a pull request. :smile:
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Built With
 - [Guzzle](https://github.com/guzzle/guzzle) - HTTP client
