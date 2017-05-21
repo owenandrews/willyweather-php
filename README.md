@@ -93,6 +93,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - [Guzzle](https://github.com/guzzle/guzzle) - HTTP client
 - [GuzzleCache](https://github.com/Kevinrob/guzzle-cache-middleware) - Guzzle caching middleware
 - [Carbon](https://github.com/briannesbitt/Carbon) - Date time library
+- [Flysystem](https://github.com/thephpleague/flysystem) - Filesystem abstraction
 
 ## Authors
 - [Owen Andrews](https://github.com/owenandrews)
