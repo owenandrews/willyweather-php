@@ -80,6 +80,9 @@ use WillyWeather\Client;
 $willyWeather = new Client('<API-KEY>', '/tmp/');
 ```
 
+## Dates and Times
+All date/time strings are converted to [Carbon](https://github.com/briannesbitt/Carbon) objects in the locations local timezone.
+
 ## Contributing
 Contributions are most welcome, just submit a pull request. :smile:
 
@@ -89,6 +92,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Built With
 - [Guzzle](https://github.com/guzzle/guzzle) - HTTP client
 - [GuzzleCache](https://github.com/Kevinrob/guzzle-cache-middleware) - Guzzle caching middleware
+- [Carbon](https://github.com/briannesbitt/Carbon) - Date time library
 
 ## Authors
 - [Owen Andrews](https://github.com/owenandrews)
