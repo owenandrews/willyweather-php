@@ -1,5 +1,5 @@
 # willyweather-php
-A PHP client for willyweather.com.au's v2 API.
+A PHP client for WillyWeathers's v2 API. http://www.willyweather.com.au/info/api.html
 
 **Note: This is not an official library, nor is it fully featured.**
 
@@ -79,3 +79,16 @@ use WillyWeather\Client;
 
 $willyWeather = new Client('<API-KEY>', '/tmp/');
 ```
+
+## Contributing
+Contributions are most welcome, just submit a pull request. :smile:
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Built With
+- [Guzzle](https://github.com/guzzle/guzzle) - HTTP client
+- [GuzzleCache](https://github.com/Kevinrob/guzzle-cache-middleware) - Guzzle caching middleware
+
+## Authors
+- [Owen Andrews](https://github.com/owenandrews)
