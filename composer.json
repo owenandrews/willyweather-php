@@ -1,0 +1,21 @@
+{
+    "name": "owenandrews/willyweather-php",
+    "description": "A PHP client for WillyWeathers's v2 API.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Owen Andrews",
+            "email": "owen@owenandre.ws"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.2",
+        "kevinrob/guzzle-cache-middleware": "^2.0",
+        "league/flysystem": "^1.0",
+        "nesbot/carbon": "^1.22"
+    },
+    "autoload": {
+		"psr-4": { "WillyWeather\\": "src/" }
+	}
+}
