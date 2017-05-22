@@ -11,19 +11,17 @@
     
     class HttpClient
     {
-        protected $baseUrl = 'https://api.willyweather.com.au/v2/';
+        protected $baseUrl = "https://api.willyweather.com.au/v2/";
         
         protected $apiKey;
         
         protected $client;
         
-        protected $cachePath;
-        
         public function __construct(string $apiKey, string $cachePath = null)
         {
             $this->apiKey = $apiKey;
             $this->cachePath = $cachePath;
-            $this->client = new GuzzleClient(['handler' => $this->getHandlerStack()]);
+            $this->client = new GuzzleClient(["handler" => $this->getHandlerStack($cachePath)]);
         }
         
         /**
@@ -34,9 +32,9 @@
          * @param array $parameters (default: [])
          * @return array
          */
-        public function get(string $path, array $parameters = []) : array
+        public function get(string $path, array $parameters = [])
         {   
-            $response = $this->client->request('GET', $this->baseUrl.$this->apiKey.'/'.$path, ['query' => $parameters]);
+            $response = $this->client->request("GET", $this->baseUrl.$this->apiKey."/".$path, ["query" => $parameters]);
             
             return $this->processResponse($response);
         }
@@ -48,7 +46,7 @@
          * @param Response $response
          * @return array
          */
-        protected function processResponse(Response $response) : array
+        protected function processResponse(Response $response)
         {
             $body = $response->getBody(true);
             
@@ -61,19 +59,19 @@
          * @access protected
          * @return GuzzleHttp\HandlerStack
          */
-        protected function getHandlerStack() : HandlerStack
+        protected function getHandlerStack(string $cachePath)
         {
             $stack = HandlerStack::create();
             
-            if (isset($this->cachePath)) {
+            if (isset($cachePath)) {
                 $stack->push(new CacheMiddleware(
                     new GreedyCacheStrategy(
                         new FlysystemStorage(
-                            new Local($this->cachePath)
+                            new Local($cachePath)
                         ),
                         (60 * 60 * 3) // TTL 3 hours
                     )
-                ), 'cache');
+                ), "cache");
             }
             
             return $stack;

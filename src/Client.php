@@ -32,7 +32,7 @@
          * @param int $id
          * @return WillyWeather\Location
          */
-        public function location(int $id, array $weather = []) : Location
+        public function location(int $id, array $weather = [])
         {
             return new Location($this, $id, $weather);
         }

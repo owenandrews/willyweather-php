@@ -111,6 +111,46 @@
             return $result;
         }
         
+        public function getName()
+        {
+            return $this->name;
+        }
+        
+        public function getRegion()
+        {
+            return $this->region;
+        }
+        
+        public function getState()
+        {
+            return $this->state;
+        }
+        
+        public function getPostcode()
+        {
+            return $this->postcode;
+        }
+        
+        public function getTimeZone()
+        {
+            return $this->timeZone;
+        }
+        
+        public function getCoordinates()
+        {
+            return $this->coordinates;
+        }
+        
+        public function getTypeId()
+        {
+            return $this->typeId;
+        }
+        
+        public function getDistance()
+        {
+            return $this->distance;
+        }
+        
         public function getForecasts(array $weather = ["forecasts" => ["weather"]])
         {
             if (!isset($this->forecasts)) {

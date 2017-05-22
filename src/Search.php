@@ -14,7 +14,7 @@
         {
             $params = ["query" => $query];
             
-            $path = 'search.json';
+            $path = "search.json";
             
             // Hardcode metric units
             $parameters["units"] = "distance:km";
@@ -31,7 +31,7 @@
             // Hardcode metric units
             $parameters["units"] = "distance:km";
             
-            $path = 'search.json';
+            $path = "search.json";
             
             $result = $this->client->httpClient->get($path, $params);
             
