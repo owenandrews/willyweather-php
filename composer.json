@@ -1,7 +1,7 @@
 {
     "name": "owenandrews/willyweather-php",
     "description": "A PHP client for WillyWeathers's v2 API.",
-    "keywords": ["willyweather", "weather"]
+    "keywords": ["willyweather", "weather"],
     "type": "library",
     "license": "MIT",
     "homepage": "https://github.com/owenandrews/willyweather-php",
