@@ -59,7 +59,7 @@
          * @access protected
          * @return GuzzleHttp\HandlerStack
          */
-        protected function getHandlerStack(string $cachePath)
+        protected function getHandlerStack($cachePath)
         {
             $stack = HandlerStack::create();
             
