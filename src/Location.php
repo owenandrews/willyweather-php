@@ -59,13 +59,21 @@
             $params = [];
             
             if (!empty($weather)) {
+                if (isset($weather["days"])){
+                    $params["days"] = $weather["days"];
+                }
                 if (isset($weather["forecasts"])) {
                     $params["forecasts"] = implode(",", $weather["forecasts"]);
                 }
                 
+                if (isset($weather["observationalGraphs"])) {
+                    $params["observationalGraphs"] = implode(",", $weather["observationalGraphs"]);
+                }
+
                 if (isset($weather["observational"]) && $weather["observational"] == true) {
                     $params["observational"] = "true";
                 }
+
             }
             
             // Hardcode metric units
@@ -95,6 +103,10 @@
                 $this->forecasts = $result["forecasts"];
             }
             
+            if(isset($result["observationalGraphs"])) {
+                $this->observationalGraphs = $result["observationalGraphs"];
+            }
+
             if(isset($result["observational"])) {
                 $this->observational = $result["observational"];
             }
@@ -158,6 +170,15 @@
             }
             
             return $this->forecasts;
+        }
+
+        public function getObservationalGraphs(array $weather = ["observationalGraphs" => ["dew-point"]])
+        {
+            if (!isset($this->observationalGraphs)) {
+                $this->fetch($weather);
+            }
+            
+            return $this->observationalGraphs;
         }
         
         public function getObservational()
