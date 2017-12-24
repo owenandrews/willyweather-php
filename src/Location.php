@@ -59,6 +59,10 @@
             $params = [];
             
             if (!empty($weather)) {
+                if (isset($weather["days"])){
+                    $params["days"] = $weather["days"];
+                }
+                
                 if (isset($weather["forecasts"])) {
                     $params["forecasts"] = implode(",", $weather["forecasts"]);
                 }
